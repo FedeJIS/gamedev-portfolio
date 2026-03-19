@@ -14,43 +14,7 @@ export type Project = {
 
 export const projects: Project[] = [
   // ── Professional ──────────────────────────────────────────
-  {
-    slug: "bit-heroes-quest",
-    title: "Bit Heroes Quest",
-    company: "Odaclick Studios / Monumental",
-    tags: ["Unity", "C#", "Live-Service", "Legacy Code"],
-    category: "Mobile",
-    role: "Unity Engineer (Freelance)",
-    year: "2025",
-    description:
-      "End-to-end maintenance and evolution of a complex live-service title. Modernized legacy systems, reworked revenue-driving features, and kept a high-traffic game running smoothly while shipping new content.",
-    type: "professional",
-  },
-  {
-    slug: "kekspace",
-    title: "Kekspace",
-    company: "Meme Time Studios",
-    tags: ["Unity", "C#", "Multiplayer", "Web3", "SmartFox"],
-    category: "Multiplayer",
-    role: "Unity Engineer (Contractor)",
-    year: "2024",
-    description:
-      "Multiplayer social game for Pepecoin built from scratch. Implemented isometric pathfinding, NFT gallery, crypto wallet integration, poker, fishing, friends system, daily rewards, minigames, and a hard currency economy.",
-    type: "professional",
-  },
-  {
-    slug: "trump-solana-golf",
-    title: "Trump Solana Golf",
-    company: "Meme Time Studios",
-    tags: ["Unity", "C#", "Web3", "Mobile"],
-    category: "Mobile",
-    role: "Unity Engineer (Contractor)",
-    year: "2024",
-    description:
-      "Collaborated with designers and artists to develop and publish this Web3 golf game. Handled core gameplay systems and blockchain integration.",
-    type: "professional",
-  },
-  {
+   {
     slug: "game-of-thrones-legends",
     title: "Game of Thrones: Legends",
     company: "Zynga",
@@ -60,6 +24,54 @@ export const projects: Project[] = [
     year: "2023",
     description:
       "Shipped features for Zynga's GoT title: out-of-currency flow, push notifications, solo PvP, player stats, daily calendar, in-game shop, character upgrades, and more.",
+    type: "professional",
+  },
+  {
+    slug: "bit-heroes-quest",
+    title: "Bit Heroes Quest",
+    company: "Monumental",
+    tags: ["Unity", "C#", "Live-Service", "Legacy Code"],
+    category: "Multiplatform",
+    role: "Unity Engineer (Freelance)",
+    year: "2025",
+    description:
+      "End-to-end maintenance and evolution of a complex live-service title. Modernized legacy systems, reworked revenue-driving features, and kept a high-traffic game running smoothly while shipping new content.",
+    type: "professional",
+  },
+  {
+    slug: "kekspace",
+    title: "Kekspace",
+    company: "Pepecoin",
+    tags: ["Unity", "C#", "Multiplayer", "Web3", "SmartFox"],
+    category: "WebGL",
+    role: "Unity Engineer (Contractor)",
+    year: "2024",
+    description:
+      "Multiplayer social game for Pepecoin built from scratch. Implemented isometric pathfinding, NFT gallery, crypto wallet integration, poker, fishing, friends system, daily rewards, minigames, and a hard currency economy.",
+    type: "professional",
+  },
+  {
+    slug: "ninja-chess",
+    title: "Ninja Chess",
+    company: "Gatsby Games",
+    tags: ["Unity", "C#", "Chess", "Strategy"],
+    category: "Mobile",
+    role: "Unity Engineer (Contractor)",
+    year: "2024",
+    description:
+      "Designed the architecture and core gameplay of a chess variant with a ninja theme from the ground up, in collaboration with other developers.",
+    type: "professional",
+  },
+  {
+    slug: "trump-solana-golf",
+    title: "Trump Solana Golf",
+    company: "Aconcagua Games",
+    tags: ["Unity", "C#", "Web3", "Mobile"],
+    category: "Mobile",
+    role: "Unity Engineer (Contractor)",
+    year: "2024",
+    description:
+      "Collaborated with designers and artists to develop and publish this Web3 golf game. Handled core gameplay systems and blockchain integration.",
     type: "professional",
   },
   {
@@ -76,42 +88,19 @@ export const projects: Project[] = [
   },
   {
     slug: "geta-club",
-    title: "Geta Club Title",
+    title: "Geta Puzzle",
     company: "Geta Club",
     tags: ["Unity", "C#", "Level Editor"],
-    category: "Game",
+    category: "Mobile",
     role: "Unity Engineer (Contractor)",
     year: "2021",
     description:
       "Developed game mechanics and enhanced a custom level editor to speed up level creation workflows for game designers.",
     type: "professional",
   },
-  {
-    slug: "globant-demo",
-    title: "Internal Demo Project",
-    company: "Globant",
-    tags: ["Unreal Engine", "C++", "Game Design"],
-    category: "Game",
-    role: "Trainee Game Dev (Employee)",
-    year: "2020",
-    description:
-      "Led design and development of an internal game demo from scratch in Unreal Engine. Documented requirements and guided fellow trainees on core mechanics implementation.",
-    type: "professional",
-  },
 
   // ── Personal ──────────────────────────────────────────────
-  {
-    slug: "ninja-chess",
-    title: "Ninja Chess",
-    company: undefined,
-    tags: ["Unity", "C#", "Chess", "Strategy"],
-    category: "Game",
-    role: "Lead Developer",
-    year: "2024",
-    description:
-      "Designed the architecture and core gameplay of a chess variant with a ninja theme from the ground up, in collaboration with other developers.",
-    type: "personal",
-  },
+  ,
   {
     slug: "game-jam-tandil-2019",
     title: "Game Jam Tandil 2019",
@@ -128,9 +117,10 @@ export const projects: Project[] = [
 
 const categoryColors: Record<string, string> = {
   Mobile: "text-sky-400 border-sky-400/30 bg-sky-400/5",
-  Multiplayer: "text-purple-400 border-purple-400/30 bg-purple-400/5",
-  Game: "text-emerald-400 border-emerald-400/30 bg-emerald-400/5",
-  "Game Jam": "text-orange-400 border-orange-400/30 bg-orange-400/5",
+  Multiplatform: "text-sky-400 border-sky-400/30 bg-sky-400/5",
+  WebGL: "text-sky-400 border-sky-400/30 bg-sky-400/5",
+  Desktop: "text-emerald-400 border-emerald-400/30 bg-emerald-400/5",
+  GameJam: "text-orange-400 border-orange-400/30 bg-orange-400/5",
 };
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {

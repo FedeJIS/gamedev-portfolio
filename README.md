@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Portfolio — Next.js + Tailwind
+
+A dark, minimal game developer portfolio built with Next.js 14, TypeScript, and Tailwind CSS.
 
 ## Getting Started
 
-First, run the development server:
+### 1. Prerequisites
+- [Node.js 18+](https://nodejs.org) (LTS version recommended)
+- [VS Code](https://code.visualstudio.com)
+
+### 2. Setup
 
 ```bash
+# Install dependencies
+npm install
+
+# Start the dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+src/
+├── app/
+│   ├── page.tsx              ← Home page (assembles sections)
+│   ├── layout.tsx            ← Root layout (navbar + footer)
+│   ├── globals.css           ← Global styles + fonts
+│   ├── about/page.tsx        ← About Me page
+│   ├── projects/
+│   │   ├── page.tsx          ← All projects listing
+│   │   └── [slug]/page.tsx   ← Individual project page
+│   └── blog/
+│       ├── page.tsx          ← Blog listing
+│       └── [slug]/page.tsx   ← Individual blog post
+└── components/
+    ├── Navbar.tsx
+    ├── Footer.tsx
+    ├── Hero.tsx
+    ├── ProjectsSection.tsx   ← Also contains project data array
+    ├── SkillsSection.tsx
+    └── ContactSection.tsx
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customizing Content
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Your info
+- **Name**: Search `YourName` across all files and replace
+- **Email**: Search `you@example.com` and replace
+- **Social links**: Check `Navbar.tsx`, `Footer.tsx`, `ContactSection.tsx`
 
-## Deploy on Vercel
+### Projects
+Edit the `projects` array in `src/components/ProjectsSection.tsx`:
+```ts
+export const projects = [
+  {
+    slug: "my-game",           // URL slug: /projects/my-game
+    title: "My Game",
+    tags: ["Unity", "C#"],
+    category: "Game",          // "Game" | "VR" | "Tool"
+    role: "Solo Developer",
+    year: "2024",
+    description: "Short description shown in cards.",
+    cover: null,               // Add image path later: "/projects/my-game/cover.png"
+  },
+  // ...
+];
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Blog Posts
+Edit the `posts` array in `src/app/blog/page.tsx`. For a real blog,
+consider adding `next-mdx-remote` so you can write posts as `.mdx` files.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Skills
+Edit `src/components/SkillsSection.tsx` — just modify the `skillGroups` array.
+
+### Colors & Fonts
+Edit `tailwind.config.js` and `src/app/globals.css`. The accent color is `#e8ff47`.
+
+---
+
+## Deploying to Vercel (Free)
+
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com) and sign in with GitHub
+3. Click "New Project" → import your repo
+4. Click "Deploy" — that's it
+
+Your site will be live at `yourname.vercel.app` in ~60 seconds.
+You can also connect a custom domain from the Vercel dashboard.
+
+---
+
+## Next Steps
+
+- [ ] Replace placeholder content with your real info
+- [ ] Add project screenshots to `/public/projects/`
+- [ ] Set up a real contact form with [Formspree](https://formspree.io) (free tier)
+- [ ] Add MDX support for blog posts
+- [ ] Connect a custom domain on Vercel

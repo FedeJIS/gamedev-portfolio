@@ -23,12 +23,17 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-bg/90 backdrop-blur-md border-b border-border" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 px-4 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-bg/90 backdrop-blur-md border-b border-border"
+          : "bg-transparent"
       }`}
     >
       <div className="w-full h-12 flex items-center justify-between mx-4">
-        <Link href="/" className="font-mono text-sm font-medium tracking-widest uppercase">
+        <Link
+          href="/"
+          className="font-mono text-sm font-medium tracking-widest uppercase"
+        >
           <span className="text-text">Frico</span>
           <span className="font-bold text-accent">dev</span>
           <span className="animate-blink text-text-dim">_</span>
@@ -56,9 +61,15 @@ export default function Navbar() {
           className="md:hidden flex flex-col gap-1.5 p-2"
           aria-label="Toggle menu"
         >
-          <span className={`block w-5 h-px bg-text transition-all duration-200 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block w-5 h-px bg-text transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`} />
-          <span className={`block w-5 h-px bg-text transition-all duration-200 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          <span
+            className={`block w-5 h-px bg-text transition-all duration-200 ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
+          />
+          <span
+            className={`block w-5 h-px bg-text transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`}
+          />
+          <span
+            className={`block w-5 h-px bg-text transition-all duration-200 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+          />
         </button>
       </div>
 

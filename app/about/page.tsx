@@ -2,26 +2,40 @@ export default function AboutPage() {
   const timeline = [
     {
       year: "2024",
-      title: "Lead Programmer @ Studio X",
-      description: "Led a team of 3 engineers building a VR multiplayer arena. Responsible for netcode, physics, and core gameplay systems.",
+      title: "Kekspace | Sr. Unity Developer",
+      description: "Summoned to build a multiplayer social ecosystem from scratch. We had months to go live, and we nailed it. I architected the client-server sync for a meme-world metaverse, proving that speed and clean architecture can coexist.",
     },
     {
       year: "2023",
-      title: "Programmer @ Indie Collective",
-      description: "Shipped two mobile titles and one PC roguelike. Focused on procedural generation and satisfying game feel.",
+      title: "Zynga | Sr. Unity Developer",
+      description: "A full-circle moment. From playing Zynga games on Facebook as a kid to developing systems for 'Game of Thrones: Legends' as a Senior Dev. My childhood self wouldn't believe the complexity of the 'out-of-currency' flows I ended up building.",
     },
     {
       year: "2022",
-      title: "Junior Unity Developer @ GameCo",
-      description: "First professional role. Built UI systems, optimized performance for low-end devices, and contributed to 3 shipped titles.",
+      title: "Widow Games | Ssr. Unity Developer",
+      description: "The year I dove deep into the 'Bridge.' Working on Geopoly, I started mastering the connection between Unity clients and complex backends, implementing the patterns that keep global games stable.",
+    },
+    {
+      year: "2021",
+      title: "Geta Club | Unity Developer",
+      description: "First time working for a studio in Dubai. This was my 'global' awakening—learning to ship high-quality features while collaborating with a distributed international team.",
     },
     {
       year: "2020",
-      title: "Started Game Dev Journey",
-      description: "Discovered Unity, fell down a rabbit hole of tutorials, and never looked back. Built 10+ game jam projects.",
+      title: "Globant | Game Developer",
+      description: "The 'Hello World' of my professional career. Started with Unreal Engine on an internal project. Finally, I wasn't just making games; I was a Game Developer.",
+    },
+    {
+      year: "2016",
+      title: "Systems Engineering (UNICEN)",
+      description: "Started my degree with a single goal: becoming a professional Game Dev. My thesis was was a Systematic Literature Review of Agile in Game Dev.",
+    },
+    {
+      year: "2014",
+      title: "The Spark",
+      description: "Watched 'Indie Game: The Movie' and it changed everything. I realized games weren't just magic; they were systems I could build. I haven't stopped creating since.",
     },
   ];
-
   return (
     <div className="max-w-7xl mx-auto px-8 pt-32 pb-24">
       {/* Header */}

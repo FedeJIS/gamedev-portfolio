@@ -9,7 +9,7 @@ export type Project = {
   role: string;
   year: string;
   description: string;
-  type: "professional" | "personal";
+  type: "professional" | "indie" | "side-projects";
 };
 
 export const projects: Project[] = [
@@ -99,20 +99,48 @@ export const projects: Project[] = [
     type: "professional",
   },
 
-  // ── Personal ──────────────────────────────────────────────
+  // ── Indie ──────────────────────────────────────────────
   ,
   {
     slug: "game-jam-tandil-2019",
     title: "Game Jam Tandil 2019",
-    company: undefined,
     tags: ["Unity", "C#", "Game Jam"],
+    company: "Self",
     category: "Game Jam",
     role: "Organizer & Developer",
     year: "2019",
     description:
       "Organized and participated in the Game Jam Tandil 2019 event. Designed and shipped a complete game under 48-hour constraints.",
-    type: "personal",
+    type: "indie",
   },
+  ,
+
+  // ── Side Projects ──────────────────────────────────────────────
+  {
+    slug: "fricodev",
+    title: "Fricodev",
+    tags: ["Youtube"],
+    company: "",
+    category: "Social Media",
+    role: "Owner",
+    year: "2020",
+    description:
+      "Created a game developers community during 2020. Reached more than 2k suscribers and uploaded videos regarding to industry and Unity tutorials.",
+    type: "side-projects",
+  },
+  {
+    slug: "game-jam-tandil-2019",
+    title: "Game Jam Tandil 2019",
+    tags: ["Game Jam"],
+    company: "",
+    category: "Game Jam",
+    role: "Organizer",
+    year: "2019",
+    description:
+      "Organized and participated in the Game Jam Tandil 2019 event. Designed and shipped a complete game under 48-hour constraints.",
+    type: "side-projects",
+  }
+  
 ];
 
 const categoryColors: Record<string, string> = {
@@ -121,6 +149,8 @@ const categoryColors: Record<string, string> = {
   WebGL: "text-sky-400 border-sky-400/30 bg-sky-400/5",
   Desktop: "text-emerald-400 border-emerald-400/30 bg-emerald-400/5",
   GameJam: "text-orange-400 border-orange-400/30 bg-orange-400/5",
+  Youtube: "text-orange-400 border-orange-400/30 bg-orange-400/5",
+
 };
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
@@ -190,32 +220,27 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
 export default function ProjectsSection() {
   const professional = projects.filter((p) => p.type === "professional");
-  const personal = projects.filter((p) => p.type === "personal");
+  const indie = projects.filter((p) => p.type === "indie");
+  const side = projects.filter((p) => p.type === "side-projects");
 
   return (
     <section id="projects" className="max-w-7xl mx-auto px-8 py-24 text-center">
       <div className="mb-14 flex flex-col items-center gap-5">
         <div>
           <p className="font-mono text-xs text-accent tracking-widest uppercase mb-3">
-            // Selected work
+            // My Life Work
           </p>
           <h2 className="font-display font-bold text-4xl md:text-5xl text-text">
             Projects
           </h2>
         </div>
-        <Link
-          href="/projects"
-          className="inline-flex font-mono text-xs text-text-dim hover:text-accent transition-colors border-b border-border hover:border-accent pb-0.5"
-        >
-          View all →
-        </Link>
       </div>
 
       {/* Professional */}
       <div className="mb-14">
         <div className="flex items-center gap-4 mb-6">
           <span className="font-mono text-xs text-accent tracking-widest uppercase">
-            Professional
+            Professional Experience
           </span>
           <span className="flex-1 h-px bg-border" />
         </div>
@@ -226,22 +251,40 @@ export default function ProjectsSection() {
         </div>
       </div>
 
-      {/* Personal */}
-      <div>
+      {/* Indie */}
+      <div className="mb-14">
         <div className="flex items-center gap-4 mb-6">
           <span className="font-mono text-xs text-accent tracking-widest uppercase">
-            Personal
+            Indie Projects
           </span>
           <span className="flex-1 h-px bg-border" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
-          {personal.map((project, i) => (
+          {indie.map((project, i) => (
             <ProjectCard key={project.slug} project={project} index={i} />
           ))}
         </div>
       </div>
 
       <div className="mt-8 md:hidden text-center" />
+
+       {/* Side */}
+       <div className="mb-14">
+        <div className="flex items-center gap-4 mb-6">
+          <span className="font-mono text-xs text-accent tracking-widest uppercase">
+            Side Projects
+          </span>
+          <span className="flex-1 h-px bg-border" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+          {side.map((project, i) => (
+            <ProjectCard key={project.slug} project={project} index={i} />
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-8 md:hidden text-center" />
+
     </section>
   );
 }

@@ -55,7 +55,7 @@ export default function Hero() {
           <div className="flex items-center gap-3 mb-8 opacity-0 animate-fade-in animate-delay-100" style={{ animationFillMode: "forwards" }}>
             <span className="w-8 h-px bg-accent" />
             <span className="font-mono text-xs text-accent tracking-widest uppercase">
-              Software Engineer · Unity · C#
+              Software Engineer · Game Developer 
             </span>
           </div>
 
@@ -71,9 +71,29 @@ export default function Hero() {
             className="font-body text-text-dim text-base md:text-lg max-w-4xl leading-relaxed mb-10 opacity-0 animate-fade-up animate-delay-300"
             style={{ animationFillMode: "forwards" }}
           >
-            Software Engineer specialized in Unity & C# with 5+ years shipping games. 
+            Software Engineer specialized in Unity & C# with 6+ years shipping games. 
             I turn complex systems into immersive experiences.
           </p>
+
+          <p className="flex items-center justify-center gap-8">
+          {[
+            { label: "LinkedIn", href: "https://www.linkedin.com/in/federico-iribarren-susino-971007/" },
+            { label: "YouTube", href: "https://www.youtube.com/@FricoDev"},
+            { label: "Demo Reel", href: "https://www.youtube.com/@fedeiribarrensusino"},
+            { label: "Itch.io", href: "https://fricodev.itch.io/" },
+            { label: "Email", href: "mailto:federico.iribarrensusino@gmail.com" },
+          ].map(({ label, href }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-[14px] uppercase tracking-[0.2em] text-muted hover:text-accent transition-all duration-200"
+            >
+              {label}
+            </a>
+          ))}
+        </p>
 
           <div
             className="flex flex-wrap items-center justify-center gap-4 opacity-0 animate-fade-up animate-delay-400"
@@ -87,8 +107,8 @@ export default function Hero() {
           >
             {[
               { value: "6+", label: "Years Experience" },
-              { value: "3+", label: "Games Shipped" },
-              { value: "3", label: "Live-Service Titles" },
+              { value: "5+", label: "Games Shipped" },
+              { value: "5", label: "Live-Service Titles" },
             ].map(({ value, label }) => (
               <div key={label}>
                 <p className="font-display font-bold text-3xl text-accent">{value}</p>

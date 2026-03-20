@@ -1,24 +1,34 @@
 const skillGroups = [
   {
-    category: "Core",
-    skills: ["C#", "Unity", "Object-Oriented Design", "SOLID Principles", "Design Patterns"],
+    category: "Programming Languages",
+    skills: ["C#", "Java", "C++", "Python", "PostgreSQL"],
   },
   {
-    category: "Gameplay",
-    skills: ["Gameplay Systems", "Physics", "AI & Pathfinding", "Procedural Generation", "VFX / Shaders"],
+    category: "Game Engines",
+    skills: ["Unity", "Unreal Engine 5", "Game Maker", "Construct", "PyGame"],
   },
   {
-    category: "VR / AR",
-    skills: ["Meta Quest", "OpenXR", "Hand Tracking", "Spatial UI", "Performance Optimization"],
+    category: "Architecture", 
+    skills: ["SOLID Principles", "Clean Architecture", "Design Patterns", "Object-Oriented Design", "Dependency Injection"],
   },
   {
     category: "Tools & Pipeline",
-    skills: ["Unity Editor Scripting", "Git / Version Control", "CI/CD", "Addressables", "ScriptableObjects"],
+    skills: ["SmartFox", "Unity Editor Scripting", "Git", "AWS", "Unity Cloud Build"],
   },
   {
-    category: "Web (Learning)",
-    skills: ["Next.js", "TypeScript", "Tailwind CSS", "React", "Node.js"],
+    category: "Methodology",
+    skills: ["Agile", "Technical Leadership", "Technical Documentation", "Project Planning", "Cross-Disciplinary Collaboration"],
   },
+  {
+    category: "Professional Principles",
+    skills: [
+      "Technical Stewardship", 
+      "Methodological Rigor",
+      "Knowledge Sharing", 
+      "K.I.S.S", 
+      "Pragmatic Problem-Solving"
+    ],
+  }
 ];
 
 export default function SkillsSection() {
@@ -26,7 +36,7 @@ export default function SkillsSection() {
     <section id="skills" className="max-w-7xl mx-auto px-8 py-24 border-t border-border text-center">
       <div className="mb-14 flex flex-col items-center">
         <p className="font-mono text-xs text-accent tracking-widest uppercase mb-3">
-          // What I work with
+          // Professional DNA
         </p>
         <h2 className="font-display font-bold text-4xl md:text-5xl text-text">
           Skills & Tech
